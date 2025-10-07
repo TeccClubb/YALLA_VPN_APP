@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:yalla/Screens/Account%20/Account.dart';
+import 'package:yalla/Screens/bottomnav/navigation.dart';
 import 'package:yalla/Screens/home/home.dart';
+import 'package:yalla/Screens/home/server.dart';
+import 'package:yalla/Screens/home/speedtest.dart';
 // Define these screens in their own files later if needed
 
 class CustomSalomonNavigation extends StatefulWidget {
@@ -16,10 +20,10 @@ class _CustomSalomonNavigationState extends State<CustomSalomonNavigation> {
   int _currentIndex = 1; // Start with Home selected
 
   final List<Widget> _screens = [
-    const ServersScreen(),
+    const ServerScreen(),
     const HomeScreen(),
     const SpeedTestScreen(),
-    const ProfileScreen(),
+    const AccountScreen(),
   ];
 
   @override
@@ -115,84 +119,84 @@ class _CustomSalomonNavigationState extends State<CustomSalomonNavigation> {
   }
 }
 
-// Same placeholder screens as above...
-class ServersScreen extends StatelessWidget {
-  const ServersScreen({Key? key}) : super(key: key);
+// // Same placeholder screens as above...
+// class ServersScreen extends StatelessWidget {
+//   const ServersScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(
-          'Servers',
-          style: GoogleFonts.nunitoSans(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-            color: const Color(0xFF00417B),
-          ),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Icon(Icons.public, size: 100, color: Color(0xFF00417B)),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       appBar: AppBar(
+//         title: Text(
+//           'Servers',
+//           style: GoogleFonts.nunitoSans(
+//             fontSize: 24,
+//             fontWeight: FontWeight.w700,
+//             color: const Color(0xFF00417B),
+//           ),
+//         ),
+//         backgroundColor: Colors.white,
+//         elevation: 0,
+//         centerTitle: true,
+//       ),
+//       body: const Center(
+//         child: Icon(Icons.public, size: 100, color: Color(0xFF00417B)),
+//       ),
+//     );
+//   }
+// }
 
-class SpeedTestScreen extends StatelessWidget {
-  const SpeedTestScreen({Key? key}) : super(key: key);
+// class SpeedTestScreen extends StatelessWidget {
+//   const SpeedTestScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(
-          'Speed Test',
-          style: GoogleFonts.nunitoSans(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-            color: const Color(0xFF00417B),
-          ),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Icon(Icons.flash_on, size: 100, color: Color(0xFF00417B)),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       appBar: AppBar(
+//         title: Text(
+//           'Speed Test',
+//           style: GoogleFonts.nunitoSans(
+//             fontSize: 24,
+//             fontWeight: FontWeight.w700,
+//             color: const Color(0xFF00417B),
+//           ),
+//         ),
+//         backgroundColor: Colors.white,
+//         elevation: 0,
+//         centerTitle: true,
+//       ),
+//       body: const Center(
+//         child: Icon(Icons.flash_on, size: 100, color: Color(0xFF00417B)),
+//       ),
+//     );
+//   }
+// }
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+// class ProfileScreen extends StatelessWidget {
+//   const ProfileScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(
-          'Profile',
-          style: GoogleFonts.nunitoSans(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-            color: const Color(0xFF00417B),
-          ),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Icon(Icons.person, size: 100, color: Color(0xFF00417B)),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       appBar: AppBar(
+//         title: Text(
+//           'Profile',
+//           style: GoogleFonts.nunitoSans(
+//             fontSize: 24,
+//             fontWeight: FontWeight.w700,
+//             color: const Color(0xFF00417B),
+//           ),
+//         ),
+//         backgroundColor: Colors.white,
+//         elevation: 0,
+//         centerTitle: true,
+//       ),
+//       body: const Center(
+//         child: Icon(Icons.person, size: 100, color: Color(0xFF00417B)),
+//       ),
+//     );
+//   }
+// }
