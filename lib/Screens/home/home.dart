@@ -159,13 +159,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // YolloVpn Logo
+                    
                     Image.asset(
                       'assets/Logo (2).png',
                       height: 35,
                       errorBuilder: (context, error, stackTrace) {
                         return Text(
-                          'YolloVpn',
+                          'Yalla Vpn',
                           style: GoogleFonts.poppins(
                             fontSize: 22,
                             fontWeight: FontWeight.w600,

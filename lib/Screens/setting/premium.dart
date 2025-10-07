@@ -33,7 +33,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     child: Text(
                       'Premium',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.nunitoSans(
+                      style: GoogleFonts.daysOne(
                         fontSize: 20, // Reduced from 22
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF1F2937),
@@ -96,11 +96,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                               ),
                             ],
                           ),
-                          child: const Icon(
-                            Icons.verified,
-                            color: Colors.white,
-                            size: 45, // Reduced from 60
-                          ),
+                          child:Center(child: Image.asset('assets/i.png',width: 40,height: 40,color: Colors.white,)),
                         ),
                         // Small shield icon
                         Positioned(
@@ -392,11 +388,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ],
             ),
           ),
-          const Icon(
-            Icons.verified,
-            color: Color(0xFFFECF2F),
-            size: 20, // Reduced from 24
-          ),
+            Center(child: Image.asset('assets/i.png',width: 20,height: 28,)),
         ],
       ),
     );

@@ -52,7 +52,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     child: Text(
                       'Feedback',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.nunitoSans(
+                      style: GoogleFonts.daysOne(
                         fontSize: 20, // Reduced from 22
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF1F2937),

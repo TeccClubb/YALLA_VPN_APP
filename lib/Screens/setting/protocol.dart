@@ -38,7 +38,7 @@ class _ProtocolSelectionScreenState extends State<ProtocolSelectionScreen> {
                     child: Text(
                       'Select Protocol',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.nunitoSans(
+                      style: GoogleFonts.daysOne(
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF1F2937),

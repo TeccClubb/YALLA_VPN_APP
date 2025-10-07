@@ -82,7 +82,7 @@ class _ServerScreenState extends State<ServerScreen> {
                 children: [
                   Text(
                     'Server',
-                    style: GoogleFonts.nunitoSans(
+                    style: GoogleFonts.daysOne(
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                       color: const Color(0xFF1F2937),

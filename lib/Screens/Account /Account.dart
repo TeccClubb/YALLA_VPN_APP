@@ -20,7 +20,7 @@ class AccountScreen extends StatelessWidget {
                 children: [
                   Text(
                     'My Account',
-                    style: GoogleFonts.nunitoSans(
+                    style: GoogleFonts.daysOne(
                       fontSize: 22,
                       fontWeight: FontWeight.w700,
                       color: const Color(0xFF1F2937),

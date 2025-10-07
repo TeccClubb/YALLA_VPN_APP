@@ -73,7 +73,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       // Welcome To text
                       Text(
                         'Welcome To',
-                        style: GoogleFonts.nunitoSans(
+                        style: GoogleFonts.daysOne(
                           fontSize: 32,
                           fontWeight: FontWeight.w700,
                           color: const Color(0xFF2C3E50),
@@ -208,13 +208,25 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                               ),
                             ),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Icon(
-                                  Icons.shield_outlined,
-                                  size: 22,
-                                  color: Colors.white.withOpacity(0.9),
-                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 32,
+                                      height: 32,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFE5E7EB),
+                                        shape: BoxShape.circle
+                                      ),
+                                    
+                                      child: Icon(
+                                        Icons.shield,
+                                        size: 18,
+                                        color: Color(0xFF00417B)
+                                      ),
+                                    ),
+                                 
                                 const SizedBox(width: 12),
                                 Text(
                                   'Next',
@@ -223,6 +235,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
+                                ),
+                                 ],
                                 ),
                                 const SizedBox(width: 12),
                                 const Icon(

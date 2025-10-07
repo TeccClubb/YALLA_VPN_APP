@@ -36,9 +36,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
       title: "Secure Every",
       thirdTitle: "Moment",
       subtitle:
-          "Stay invisible premium privacy that never takes a break. One tap, total peace of mind.",
+          "Stay invisible premium privacy that never takes a break. One tap, total peace of mind.", 
       illustration: OnboardingIllustration.secureEveryMoment,
-      imagePath: "assets/security 1.png", // Your third image
+      imagePath: "assets/Group 1261153867.png", // Your third image
     ),
   ];
 
@@ -144,30 +144,44 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     ),
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.shield_outlined,
-                        size: 24,
-                        color: Colors.white.withOpacity(0.9),
-                      ),
-                      const SizedBox(width: 12),
-                      Text(
-                        'Next',
-                        style: GoogleFonts.nunitoSans(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      const Icon(
-                        Icons.arrow_forward,
-                        size: 20,
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 32,
+                                      height: 32,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFE5E7EB),
+                                        shape: BoxShape.circle
+                                      ),
+                                    
+                                      child: Icon(
+                                        Icons.shield,
+                                        size: 18,
+                                        color: Color(0xFF00417B)
+                                      ),
+                                    ),
+                                 
+                                const SizedBox(width: 12),
+                                Text(
+                                  'Next',
+                                  style: GoogleFonts.nunitoSans(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                 ],
+                                ),
+                                const SizedBox(width: 12),
+                                const Icon(
+                                  Icons.arrow_forward,
+                                  size: 18,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
                 ),
               ),
             ),
