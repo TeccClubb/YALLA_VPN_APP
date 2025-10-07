@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yalla/Screens/bottomnav/bottomnav.dart';
+import 'package:yalla/Screens/onborading/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const CustomSalomonNavigation(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

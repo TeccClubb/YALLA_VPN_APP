@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:yalla/Screens/bottomnav/bottomnav.dart';
+import 'package:yalla/Screens/home/home.dart';
 import 'signup.dart';
 import 'forget.dart';
 
@@ -195,7 +197,14 @@ class _LoginScreenState extends State<LoginScreen>
                   width: double.infinity,
                   height: 52,
                   child: ElevatedButton(
-                    onPressed: _handleLogin,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const CustomSalomonNavigation(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF00417B),
                       foregroundColor: Colors.white,
@@ -215,9 +224,8 @@ class _LoginScreenState extends State<LoginScreen>
                   ),
                 ),
 
-                const SizedBox(height: 24),
+                SizedBox(height: 24),
 
-                // Divider with "or"
                 Row(
                   children: [
                     Expanded(

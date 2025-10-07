@@ -26,24 +26,21 @@ class AccountScreen extends StatelessWidget {
                       color: const Color(0xFF1F2937),
                     ),
                   ),
-                  // In your account screen header, update the settings icon to navigate to settings:
-
-//  
-// Replace with:
-
-GestureDetector(
-  onTap: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const SettingsScreen()),
-    );
-  },
-  child: Icon(
-    Icons.settings,
-    size: 22,
-    color: Colors.grey[600],
-  ),
-),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SettingsScreen(),
+                        ),
+                      );
+                    },
+                    child: Icon(
+                      Icons.settings,
+                      size: 22,
+                      color: Colors.grey[600],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -61,7 +58,7 @@ GestureDetector(
                       width: double.infinity,
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF9FAFB), // Updated color
+                        color: const Color(0xFFF9FAFB),
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
@@ -74,19 +71,32 @@ GestureDetector(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Personal Details Header
+                          // Personal Details Header with Light Gradient Icon
                           Row(
                             children: [
                               Container(
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF00417B),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      const Color(
+                                        0xFF00417B,
+                                      ).withOpacity(0.2), // Very light blue
+                                      const Color(
+                                        0xFFFECF2F,
+                                      ).withOpacity(0.3), // Light golden yellow
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: const Icon(
                                   Icons.person,
-                                  color: Colors.white,
+                                  color: Color(
+                                    0xFF00417B,
+                                  ), // Blue icon on gradient
                                   size: 20,
                                 ),
                               ),
@@ -140,7 +150,7 @@ GestureDetector(
                       width: double.infinity,
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF9FAFB), // Updated to same color
+                        color: const Color(0xFFF9FAFB),
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
@@ -152,7 +162,7 @@ GestureDetector(
                       ),
                       child: Column(
                         children: [
-                          // Current Plan Header
+                          // Current Plan Header with Light Gradient Star Icon
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -182,12 +192,25 @@ GestureDetector(
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF00417B),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      const Color(
+                                        0xFF00417B,
+                                      ).withOpacity(0.2), // Very light blue
+                                      const Color(
+                                        0xFFFECF2F,
+                                      ).withOpacity(0.3), // Light golden yellow
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: const Icon(
                                   Icons.star,
-                                  color: Colors.white,
+                                  color: Color(
+                                    0xFF00417B,
+                                  ), // Blue icon on gradient
                                   size: 20,
                                 ),
                               ),
@@ -221,11 +244,13 @@ GestureDetector(
 
                           const SizedBox(height: 8),
 
-                          // Progress Bar with Custom Gradient (#0F2664 #FFFFFF #0F2664)
+                          // Progress Bar with New Gradient (#00417B → #FECF2F)
                           Container(
                             height: 6,
                             decoration: BoxDecoration(
-                              color: const Color(0xFFE5E7EB), // Progress background
+                              color: const Color(
+                                0xFFE5E7EB,
+                              ), // Progress background
                               borderRadius: BorderRadius.circular(3),
                             ),
                             child: Stack(
@@ -238,7 +263,7 @@ GestureDetector(
                                     borderRadius: BorderRadius.circular(3),
                                   ),
                                 ),
-                                // Progress with gradient (#0F2664 → #FFFFFF → #0F2664)
+                                // Progress with new gradient (#00417B → #FECF2F)
                                 FractionallySizedBox(
                                   widthFactor: 0.75, // 75% progress
                                   child: Container(
@@ -246,11 +271,9 @@ GestureDetector(
                                     decoration: BoxDecoration(
                                       gradient: const LinearGradient(
                                         colors: [
-                                          Color(0xFF0F2664), // Dark blue
-                                          Color(0xFFFFFFFF), // White
-                                          Color(0xFF0F2664), // Dark blue
+                                          Color(0xFF00417B), // Dark blue
+                                          Color(0xFFFECF2F), // Golden yellow
                                         ],
-                                        stops: [0.0, 0.5, 1.0],
                                         begin: Alignment.centerLeft,
                                         end: Alignment.centerRight,
                                       ),
@@ -315,11 +338,7 @@ GestureDetector(
       children: [
         Row(
           children: [
-            Icon(
-              icon,
-              size: 18,
-              color: Colors.grey[600],
-            ),
+            Icon(icon, size: 18, color: Colors.grey[600]),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -349,11 +368,7 @@ GestureDetector(
         ),
         if (!isLast) ...[
           const SizedBox(height: 16),
-          Divider(
-            color: Colors.grey[300],
-            thickness: 0.5,
-            height: 1,
-          ),
+          Divider(color: Colors.grey[300], thickness: 0.5, height: 1),
         ],
       ],
     );
@@ -369,12 +384,31 @@ GestureDetector(
           ),
           title: Row(
             children: [
-              Icon(
-                Icons.star,
-                color: const Color(0xFF00417B),
-                size: 20,
+              Container(
+                width: 24,
+                height: 24,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color(
+                        0xFF00417B,
+                      ).withOpacity(0.2), // Very light blue
+                      const Color(
+                        0xFFFECF2F,
+                      ).withOpacity(0.3), // Light golden yellow
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Icon(
+                  Icons.star,
+                  color: Color(0xFF00417B),
+                  size: 16,
+                ),
               ),
-              const SizedBox(width: 6),
+              const SizedBox(width: 8),
               Text(
                 'Upgrade Plan',
                 style: GoogleFonts.nunitoSans(
@@ -509,9 +543,7 @@ GestureDetector(
         ),
         backgroundColor: Colors.green,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );
   }

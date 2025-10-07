@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:yalla/Screens/setting/feedback.dart';
+import 'package:yalla/Screens/setting/premium.dart';
+import 'package:yalla/Screens/setting/protocol.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -66,7 +69,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                     Container(
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF9FAFB), // Consistent container color
+                        color: const Color(0xFFF9FAFB),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
@@ -92,7 +95,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ),
                               ],
                             ),
-                            onTap: () => _showProtocolDialog(),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ProtocolSelectionScreen(),
+                                ),
+                              );
+                            },
                           ),
                           _buildDivider(),
                           _buildSettingItem(
@@ -105,7 +116,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   _killSwitchEnabled = value;
                                 });
                               },
-                              activeColor: const Color(0xFF10B981), // Green color
+                              activeColor: const Color(
+                                0xFF00417B,
+                              ), // Blue switch
                             ),
                           ),
                           _buildDivider(),
@@ -119,7 +132,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   _autoConnectEnabled = value;
                                 });
                               },
-                              activeColor: const Color(0xFF10B981), // Green color
+                              activeColor: const Color(
+                                0xFF00417B,
+                              ), // Blue switch
                             ),
                           ),
                           _buildDivider(),
@@ -146,7 +161,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                     Container(
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF9FAFB), // Consistent container color
+                        color: const Color(0xFFF9FAFB),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
@@ -161,7 +176,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   _dnsLeakProtectionEnabled = value;
                                 });
                               },
-                              activeColor: const Color(0xFF10B981), // Green color
+                              activeColor: const Color(
+                                0xFF00417B,
+                              ), // Blue switch
                             ),
                           ),
                           _buildDivider(),
@@ -175,7 +192,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   _adTrackerBlockerEnabled = value;
                                 });
                               },
-                              activeColor: const Color(0xFF10B981), // Green color
+                              activeColor: const Color(
+                                0xFF00417B,
+                              ), // Blue switch
                             ),
                             isLast: true,
                           ),
@@ -191,7 +210,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                     Container(
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF9FAFB), // Consistent container color
+                        color: const Color(0xFFF9FAFB),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
@@ -204,7 +223,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               size: 18,
                               color: Colors.grey[600],
                             ),
-                            onTap: () => _showFeedbackDialog(),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const FeedbackScreen(),
+                                ),
+                              );
+                            },
                           ),
                           _buildDivider(),
                           _buildSettingItem(
@@ -215,7 +241,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               size: 18,
                               color: Colors.grey[600],
                             ),
-                            onTap: () => _showPremiumPlanDialog(),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const PremiumScreen(),
+                                ),
+                              );
+                            },
                           ),
                           _buildDivider(),
                           _buildSettingItem(
@@ -336,12 +369,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: const Color(0xFF00417B).withOpacity(0.1), // Consistent icon background
+                gradient: LinearGradient(
+                  colors: [
+                    const Color(0xFF00417B).withOpacity(0.2), // Very light blue
+                    const Color(
+                      0xFFFECF2F,
+                    ).withOpacity(0.3), // Light golden yellow
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
                 icon,
-                color: const Color(0xFF00417B), // Consistent icon color
+                color: const Color(0xFF00417B), // Keep icons blue
                 size: 20,
               ),
             ),
@@ -366,11 +408,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget _buildDivider() {
     return Padding(
       padding: const EdgeInsets.only(left: 68),
-      child: Divider(
-        height: 1,
-        thickness: 0.5,
-        color: Colors.grey[300],
-      ),
+      child: Divider(height: 1, thickness: 0.5, color: Colors.grey[300]),
     );
   }
 
@@ -387,7 +425,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              title: Text('Auto (Recommended)', style: GoogleFonts.nunitoSans()),
+              title: Text(
+                'Auto (Recommended)',
+                style: GoogleFonts.nunitoSans(),
+              ),
               leading: Icon(Icons.auto_awesome, color: const Color(0xFF00417B)),
               onTap: () => Navigator.pop(context),
             ),
@@ -473,7 +514,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     'Feedback sent successfully!',
                     style: GoogleFonts.nunitoSans(),
                   ),
-                  backgroundColor: const Color(0xFF10B981),
+                  backgroundColor: const Color(0xFF00417B),
                 ),
               );
             },
@@ -541,13 +582,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
           children: [
             Text('Version: 1.0.0', style: GoogleFonts.nunitoSans()),
             const SizedBox(height: 8),
-            Text('Build Date: October 07, 2025', style: GoogleFonts.nunitoSans()),
+            Text('Build Date: 2025-10-07', style: GoogleFonts.nunitoSans()),
             const SizedBox(height: 8),
-            Text('User: uzairahmadaio', style: GoogleFonts.nunitoSans()), // Current user
+            Text(
+              'Build Time: 11:44:25 UTC',
+              style: GoogleFonts.nunitoSans(),
+            ), // Updated current time
+            const SizedBox(height: 8),
+            Text('User: uzairahmadaio', style: GoogleFonts.nunitoSans()),
             const SizedBox(height: 8),
             Text('Developer: YallaVPN Team', style: GoogleFonts.nunitoSans()),
             const SizedBox(height: 8),
-            Text('© 2025 YallaVPN. All rights reserved.', style: GoogleFonts.nunitoSans()),
+            Text(
+              '© 2025 YallaVPN. All rights reserved.',
+              style: GoogleFonts.nunitoSans(),
+            ),
           ],
         ),
         actions: [
